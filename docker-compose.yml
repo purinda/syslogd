@@ -1,0 +1,11 @@
+version: "2.4"
+services:
+  syslog:
+    image: balabit/syslog-ng:latest
+    volumes:
+      - ./log/:/var/log/
+      - ./syslog-ng:/etc/default/syslog-ng
+      - ./syslog-ng.conf:/etc/syslog-ng/syslog-ng.conf
+    ports:
+      - 514:514/udp
+      - 601:601
