@@ -4,7 +4,7 @@ services:
     image: balabit/syslog-ng:latest
     volumes:
       # Use host system TZ
-      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
       # syslogd mounts
       - ./log/:/var/log/
       - ./syslog-ng:/etc/default/syslog-ng
